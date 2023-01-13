@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
-from pydantic import BaseModel
-
 from dependencies import get_token_header
+from models import BioSample
+
 
 router = APIRouter(
     prefix="/biosamples",
@@ -9,10 +9,6 @@ router = APIRouter(
     dependencies=[Depends(get_token_header)],
     responses={404: {"description": "Not found"}},
 )
-
-
-class Biosample(BaseModel):
-    name: str
 
 
 fake_biosamples_db = {"first": {"name": "Sample 1"}, "second": {"name": "Sample 2"}}
@@ -24,10 +20,10 @@ async def read_biosamples():
 
 
 @router.post("/")
-async def create_biosample(biosample: Biosample):
+async def create_biosample(biosample: BioSample):
     if biosample.name in fake_biosamples_db:
         raise HTTPException(status_code=404, detail="Biosample already created")
-    return {"name": fake_biosamples_db[biosample.name]["name"], "biosample_id": biosample.name}
+    return {"name": fake_biosamples_db[biosample.name]["name"], "biosample_id": biosample.identifier}
 
 
 @router.get("/{biosample_id}")

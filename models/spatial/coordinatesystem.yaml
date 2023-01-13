@@ -1,0 +1,39 @@
+id: https://www.biorxiv.org/content/10.1101/2023.01.22.525049v1
+name: coordinatesystem
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+
+  ThreeDimensionalCartesian:
+    attributes:
+      full_name:
+        required: true
+      short_name:
+        required: true
+      native_unit:
+        required: true
+      origin:
+        required: true
+      anatomical_axes_representation:
+        required: true
+      release_date:
+        range: date
+        required: true
+      version_information:
+        required: true
+      default_image:
+      ontology_identifier:
+
+  CoordinateSystem:
+    description: >-
+      A framework for specifying locations with units, origin, direction, and orientation
+    tree_root: true
+    attributes:
+      threedimensionalcartesian:
+        multivalued: false
+        range: ThreeDimensionalCartesian
+        required: true

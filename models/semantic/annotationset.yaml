@@ -1,0 +1,48 @@
+id: https://www.biorxiv.org/content/10.1101/2023.01.22.525049v1
+name: annotationset
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+
+  Annotation:
+    attributes:
+      internal_identifier:
+        required: true
+      laterality:
+        required: true
+      criteria_type:
+        required: true
+      visualized_in:
+        required: true
+      criteria:
+      display_color:
+      inspired_by:
+      best_view_point:
+
+  AnnotationSet:
+    description: >-
+      Graphical marks or labels referring to spatial locations determined by features observed in, inferred from, or mapped onto the reference data, specifying structures or boundaries
+    tree_root: true
+    attributes:
+      full_name:
+        required: true
+      short_name:
+        required: true
+      annotations:
+        multivalued: true
+        inlined_as_list: true
+        range: Annotation
+        required: true
+      delineation:
+        range: boolean
+        required: true
+      parcellation:
+        range: boolean
+        required: true
+      probabilistic_map:
+        range: boolean
+        required: true

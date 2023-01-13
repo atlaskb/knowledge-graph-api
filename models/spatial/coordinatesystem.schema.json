@@ -1,0 +1,78 @@
+{
+    "$defs": {
+        "CoordinateSystem": {
+            "additionalProperties": false,
+            "description": "A framework for specifying locations with units, origin, direction, and orientation",
+            "properties": {
+                "threedimensionalcartesian": {
+                    "$ref": "#/$defs/ThreeDimensionalCartesian"
+                }
+            },
+            "required": [
+                "threedimensionalcartesian"
+            ],
+            "title": "CoordinateSystem",
+            "type": "object"
+        },
+        "ThreeDimensionalCartesian": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "anatomical_axes_representation": {
+                    "type": "string"
+                },
+                "default_image": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "type": "string"
+                },
+                "native_unit": {
+                    "type": "string"
+                },
+                "ontology_identifier": {
+                    "type": "string"
+                },
+                "origin": {
+                    "type": "string"
+                },
+                "release_date": {
+                    "format": "date",
+                    "type": "string"
+                },
+                "short_name": {
+                    "type": "string"
+                },
+                "version_information": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "full_name",
+                "short_name",
+                "native_unit",
+                "origin",
+                "anatomical_axes_representation",
+                "release_date",
+                "version_information"
+            ],
+            "title": "ThreeDimensionalCartesian",
+            "type": "object"
+        }
+    },
+    "$id": "https://www.biorxiv.org/content/10.1101/2023.01.22.525049v1",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "threedimensionalcartesian": {
+            "$ref": "#/$defs/ThreeDimensionalCartesian"
+        }
+    },
+    "required": [
+        "threedimensionalcartesian"
+    ],
+    "title": "coordinatesystem",
+    "type": "object",
+    "version": null
+}
