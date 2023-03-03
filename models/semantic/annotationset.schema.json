@@ -1,0 +1,117 @@
+{
+    "$defs": {
+        "Annotation": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "best_view_point": {
+                    "type": "string"
+                },
+                "criteria": {
+                    "type": "string"
+                },
+                "criteria_type": {
+                    "type": "string"
+                },
+                "display_color": {
+                    "type": "string"
+                },
+                "inspired_by": {
+                    "type": "string"
+                },
+                "internal_identifier": {
+                    "type": "string"
+                },
+                "laterality": {
+                    "type": "string"
+                },
+                "visualized_in": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "internal_identifier",
+                "laterality",
+                "criteria_type",
+                "visualized_in"
+            ],
+            "title": "Annotation",
+            "type": "object"
+        },
+        "AnnotationSet": {
+            "additionalProperties": false,
+            "description": "Graphical marks or labels referring to spatial locations determined by features observed in, inferred from, or mapped onto the reference data, specifying structures or boundaries",
+            "properties": {
+                "annotations": {
+                    "items": {
+                        "$ref": "#/$defs/Annotation"
+                    },
+                    "type": "array"
+                },
+                "delineation": {
+                    "type": "boolean"
+                },
+                "full_name": {
+                    "type": "string"
+                },
+                "parcellation": {
+                    "type": "boolean"
+                },
+                "probabilistic_map": {
+                    "type": "boolean"
+                },
+                "short_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "full_name",
+                "short_name",
+                "annotations",
+                "delineation",
+                "parcellation",
+                "probabilistic_map"
+            ],
+            "title": "AnnotationSet",
+            "type": "object"
+        }
+    },
+    "$id": "https://www.biorxiv.org/content/10.1101/2023.01.22.525049v1",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "annotations": {
+            "items": {
+                "$ref": "#/$defs/Annotation"
+            },
+            "type": "array"
+        },
+        "delineation": {
+            "type": "boolean"
+        },
+        "full_name": {
+            "type": "string"
+        },
+        "parcellation": {
+            "type": "boolean"
+        },
+        "probabilistic_map": {
+            "type": "boolean"
+        },
+        "short_name": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "full_name",
+        "short_name",
+        "annotations",
+        "delineation",
+        "parcellation",
+        "probabilistic_map"
+    ],
+    "title": "annotationset",
+    "type": "object",
+    "version": null
+}

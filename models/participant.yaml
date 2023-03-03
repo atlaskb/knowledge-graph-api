@@ -1,0 +1,23 @@
+id: https://bican.org/examples/participant
+name: participant
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+  Participant:
+    attributes:
+      identifier:
+      altName:
+      strain:
+      cellLine:
+      vendor:
+      age:
+      sex:
+      genotype:
+      species:
+      disorder:
+      relatedParticipant:
+      sameAs:

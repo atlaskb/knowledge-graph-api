@@ -1,0 +1,114 @@
+{
+    "$defs": {
+        "Term": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "name_of_location": {
+                    "type": "string"
+                },
+                "ontology_identifier": {
+                    "type": "string"
+                },
+                "other_anatomical_relations": {
+                    "type": "string"
+                },
+                "parent_structure": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name_of_location"
+            ],
+            "title": "Term",
+            "type": "object"
+        },
+        "Terminology": {
+            "additionalProperties": false,
+            "description": "A set of terms that identifies the annotations, providing human readability and context, and allowing communication about brain locations and structural properties",
+            "properties": {
+                "controlled_vocabulary": {
+                    "type": "boolean"
+                },
+                "defined_in": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "type": "string"
+                },
+                "ontology": {
+                    "type": "boolean"
+                },
+                "ontology_identifier": {
+                    "type": "string"
+                },
+                "short_name": {
+                    "type": "string"
+                },
+                "taxonomy": {
+                    "type": "boolean"
+                },
+                "terms": {
+                    "items": {
+                        "$ref": "#/$defs/Term"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "full_name",
+                "short_name",
+                "terms",
+                "controlled_vocabulary",
+                "taxonomy",
+                "ontology"
+            ],
+            "title": "Terminology",
+            "type": "object"
+        }
+    },
+    "$id": "https://www.biorxiv.org/content/10.1101/2023.01.22.525049v1",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "controlled_vocabulary": {
+            "type": "boolean"
+        },
+        "defined_in": {
+            "type": "string"
+        },
+        "full_name": {
+            "type": "string"
+        },
+        "ontology": {
+            "type": "boolean"
+        },
+        "ontology_identifier": {
+            "type": "string"
+        },
+        "short_name": {
+            "type": "string"
+        },
+        "taxonomy": {
+            "type": "boolean"
+        },
+        "terms": {
+            "items": {
+                "$ref": "#/$defs/Term"
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "full_name",
+        "short_name",
+        "terms",
+        "controlled_vocabulary",
+        "taxonomy",
+        "ontology"
+    ],
+    "title": "terminology",
+    "type": "object",
+    "version": null
+}

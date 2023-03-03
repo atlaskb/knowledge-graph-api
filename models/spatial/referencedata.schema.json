@@ -1,0 +1,99 @@
+{
+    "$defs": {
+        "Image": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "coordinate_space": {
+                    "type": "string"
+                },
+                "defined_in": {
+                    "type": "string"
+                },
+                "voxel_or_pixel_size": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "defined_in",
+                "voxel_or_pixel_size",
+                "coordinate_space"
+            ],
+            "title": "Image",
+            "type": "object"
+        },
+        "ReferenceData": {
+            "additionalProperties": false,
+            "description": "Graphical representations of one or several brains, or parts of brains, chosen as the biological reference for that atlas",
+            "properties": {
+                "image": {
+                    "$ref": "#/$defs/Image"
+                },
+                "subjects": {
+                    "items": {
+                        "$ref": "#/$defs/Subject"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "subjects",
+                "image"
+            ],
+            "title": "ReferenceData",
+            "type": "object"
+        },
+        "Subject": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "biological_sex": {
+                    "type": "string"
+                },
+                "identifier": {
+                    "type": "string"
+                },
+                "method_information": {
+                    "type": "string"
+                },
+                "processing_information": {
+                    "type": "string"
+                },
+                "species": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "identifier",
+                "species",
+                "biological_sex",
+                "method_information",
+                "processing_information"
+            ],
+            "title": "Subject",
+            "type": "object"
+        }
+    },
+    "$id": "https://www.biorxiv.org/content/10.1101/2023.01.22.525049v1",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": true,
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "image": {
+            "$ref": "#/$defs/Image"
+        },
+        "subjects": {
+            "items": {
+                "$ref": "#/$defs/Subject"
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "subjects",
+        "image"
+    ],
+    "title": "referencedata",
+    "type": "object",
+    "version": null
+}

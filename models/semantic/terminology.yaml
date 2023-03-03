@@ -1,0 +1,43 @@
+id: https://www.biorxiv.org/content/10.1101/2023.01.22.525049v1
+name: terminology
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+
+  Term:
+    attributes:
+      name_of_location:
+        required: true
+      ontology_identifier:
+      other_anatomical_relations:
+      parent_structure:
+
+  Terminology:
+    description: >-
+      A set of terms that identifies the annotations, providing human readability and context, and allowing communication about brain locations and structural properties
+    tree_root: true
+    attributes:
+      full_name:
+        required: true
+      short_name:
+        required: true
+      terms:
+        multivalued: true
+        inlined_as_list: true
+        range: Term
+        required: true
+      defined_in:
+      ontology_identifier:
+      controlled_vocabulary:
+        range: boolean
+        required: true
+      taxonomy:
+        range: boolean
+        required: true
+      ontology:
+        range: boolean
+        required: true

@@ -1,0 +1,55 @@
+id: https://www.biorxiv.org/content/10.1101/2023.01.22.525049v1
+name: referencedata
+prefixes:
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+
+  Subject:
+    attributes:
+      identifier:
+        required: true
+      species:
+        required: true
+      biological_sex:
+#        range: sex_enum
+        required: true
+      method_information:
+        required: true
+      processing_information:
+        required: true
+
+  Image:
+    attributes:
+      defined_in:
+        required: true
+      voxel_or_pixel_size:
+        range: integer
+        required: true
+      coordinate_space:
+        required: true
+
+  ReferenceData:
+    description: >-
+      Graphical representations of one or several brains, or parts of brains, chosen as the biological reference for that atlas
+    tree_root: true
+    attributes:
+      subjects:
+        multivalued: true
+        inlined_as_list: true
+        range: Subject
+        required: true
+      image:
+        multivalued: false
+        range: Image
+        required: true
+
+#enums:
+#  SexType:
+#    permissible_values:
+#      F:
+#      M:
+#      Other:
